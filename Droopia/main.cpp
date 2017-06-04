@@ -1,73 +1,53 @@
-using namespace std;
 
 #include <iostream>
 #include <thread>
 
-//Include SFML
-#include <SFML\Audio.hpp>
-#include <SFML\Config.hpp>
-#include <SFML\Graphics.hpp>
-#include <SFML\Main.hpp>
-#include <SFML\Network.hpp>
-#include <SFML\OpenGL.hpp>
-#include <SFML\System.hpp>
-#include <SFML\Window.hpp>
+#include "global.h"
 
-void keyboard(sf::CircleShape shape) {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-
-		//Left key is pressed
-		shape.move(-10, 0);
-		cout << "Left";
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-
-		//Up key is pressed
-		shape.move(0, -10);
-		cout << "Up";
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-
-		//Right key is pressed
-		shape.move(10, 0);
-		cout << "Right";
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-
-		//Down key is pressed
-		shape.move(0, 1);
-		cout << "Down";
-	}
-
-}
-
-void mainWindow() {
-	sf::RenderWindow window(sf::VideoMode(200, 200), "Droopia");
-	sf::CircleShape shape(10.f);
-	shape.setFillColor(sf::Color::Green);
-
-	while (window.isOpen())
-	{
-		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed)
-				window.close();
-		}
-
-		window.clear();
-		window.draw(shape);
-		window.display();
-
-		keyboard(shape);
-	}
-}
+#include "main.hpp"
 
 int main()
 {
-	std::thread t1(mainWindow);
-	t1.join();
+	moveX = 0;
+	moveY = 0;
+	std::thread mainWindowThread(mainWindow);
+	std::thread keyboardThread(keyboard);
+	mainWindowThread.join();
 
 	return 0;
 }
 
+float movspeed = 0.1f;
+
+void keyboard() {
+	while (true) {
+
+		Sleep(5);
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+
+			//Left key is pressed
+			moveX--;
+			std::cout << "Left, ";
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+
+			//Up key is pressed
+			moveY--;
+			std::cout << "Up, ";
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+
+			//Right key is pressed
+			moveX++;
+			std::cout << "Right, ";
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+
+			//Down key is pressed
+			moveY++;
+			std::cout << "Down, ";
+		}
+	}
+
+}

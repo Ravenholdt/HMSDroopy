@@ -162,7 +162,13 @@
     <ClCompile Include="render.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="global.h" />
+    <ClInclude Include="main.hpp" />
+    <ClInclude Include="render.hpp" />
     <ClInclude Include="sfml.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="textures\player.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
