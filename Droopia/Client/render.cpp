@@ -35,7 +35,7 @@ void mainWindow() {
 }
 
 void LoadTextures() {
-	playerTexture.loadFromFile("textures/player.png");
+	playerTexture.loadFromFile("Client/textures/player.png");
 	playerSprite.setTexture(playerTexture);
 	playerSprite.setTextureRect(sf::IntRect(0, 0, 128, 128));
 }

@@ -18,29 +18,29 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="render.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="main.hpp">
+    <ClInclude Include="Client\global.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="render.hpp">
+    <ClInclude Include="Client\main.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="sfml.hpp">
+    <ClInclude Include="Client\render.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="global.h">
+    <ClInclude Include="Client\sfml.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="textures\player.png">
+    <ClCompile Include="Client\render.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Client\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Client\textures\player.png">
       <Filter>Resource Files\Textures</Filter>
     </Image>
   </ItemGroup>

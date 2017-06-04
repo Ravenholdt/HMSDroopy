@@ -158,17 +158,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="render.cpp" />
+    <ClInclude Include="Client\global.h" />
+    <ClInclude Include="Client\main.hpp" />
+    <ClInclude Include="Client\render.hpp" />
+    <ClInclude Include="Client\sfml.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="global.h" />
-    <ClInclude Include="main.hpp" />
-    <ClInclude Include="render.hpp" />
-    <ClInclude Include="sfml.hpp" />
+    <ClCompile Include="Client\main.cpp" />
+    <ClCompile Include="Client\render.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="textures\player.png" />
+    <Image Include="Client\textures\player.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
