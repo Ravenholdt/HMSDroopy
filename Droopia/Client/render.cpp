@@ -10,11 +10,16 @@
 sf::Sprite playerSprite;
 sf::Texture playerTexture;
 
+sf::Sprite grassSprite;
+sf::Texture enviromentTexture;
+
+//int map[15][11];
+
 float moveX, moveY;
 
 void mainWindow() {
 	LoadTextures();
-	sf::RenderWindow window(sf::VideoMode(1000, 1000), "Droopia");
+	sf::RenderWindow window(sf::VideoMode(1300, 900), "Droopia");
 
 	while (window.isOpen())
 	{
@@ -29,6 +34,13 @@ void mainWindow() {
 
 		MoveCharacter();
 
+		for (int cordX = 0; cordX < 15; cordX++) {
+			for (int cordY = 0; cordY < 11; cordY++) {
+				grassSprite.setPosition(cordX * 80 - 40, cordY * 80 - 40);
+				window.draw(grassSprite);
+			}
+		}
+
 		window.draw(playerSprite);
 		window.display();
 	}
@@ -38,6 +50,9 @@ void LoadTextures() {
 	playerTexture.loadFromFile("Client/textures/player.png");
 	playerSprite.setTexture(playerTexture);
 	playerSprite.setTextureRect(sf::IntRect(0, 0, 128, 128));
+
+	enviromentTexture.loadFromFile("Client/textures/grass.png");
+	grassSprite.setTexture(enviromentTexture);
 }
 
 void MoveCharacter() {
