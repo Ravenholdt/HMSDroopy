@@ -11,7 +11,12 @@ sf::Sprite playerSprite;
 sf::Texture playerTexture;
 
 sf::Sprite grassSprite;
-sf::Texture enviromentTexture;
+sf::Texture groundTexture;
+
+//sf::Sprite rockSprite;
+//sf::Texture groundTexture;
+
+int tileSize = 80;
 
 //int map[15][11];
 
@@ -20,6 +25,7 @@ float moveX, moveY;
 void mainWindow() {
 	LoadTextures();
 	sf::RenderWindow window(sf::VideoMode(1300, 900), "Droopia");
+	window.setVerticalSyncEnabled(true);
 
 	while (window.isOpen())
 	{
@@ -32,7 +38,7 @@ void mainWindow() {
 
 		window.clear();
 
-		MoveCharacter();
+		//MoveCharacter();
 
 		for (int cordX = 0; cordX < 15; cordX++) {
 			for (int cordY = 0; cordY < 11; cordY++) {
@@ -51,29 +57,65 @@ void LoadTextures() {
 	playerSprite.setTexture(playerTexture);
 	playerSprite.setTextureRect(sf::IntRect(0, 0, 128, 128));
 
-	enviromentTexture.loadFromFile("Client/textures/grass.png");
-	grassSprite.setTexture(enviromentTexture);
+	groundTexture.loadFromFile("Client/textures/ground.png");
+	grassSprite.setTexture(groundTexture);
+
+	//enviromentTextrure
 }
 
-void MoveCharacter() {
+void MoveCharacter(int direction, float speed) {
+	int playerTextureOffset = 128;
+
+	sf::Vector2f movement = sf::Vector2f(0, 0);
+
+	if (direction == 0) { //Up
+		movement = sf::Vector2f(0, -1.f);
+	}
+	else if (direction == 1) { //Left
+		movement = sf::Vector2f(-1.f, 0);
+	}
+	else if (direction == 2) { //Right
+		movement = sf::Vector2f(1.f, 0);
+	}
+	else if (direction == 3) { //Down
+		movement = sf::Vector2f(0, 1.f);
+	}
+
+	movement *= speed;
+
+	playerSprite.setTextureRect(sf::IntRect(0,
+		direction * playerTextureOffset, playerTextureOffset, playerTextureOffset));
+
+	for (float i = 0; i < tileSize; i += speed) {
+		Sleep(1);
+		playerSprite.move(movement);
+	}
+}
+	
+/*void MoveCharacter() {
+
 	int playerTextureOffset = 128;
 	playerSprite.move(moveX, moveY);
 
-	if (moveX > 0) //Right
+	if (moveX > 0) { //Right
 		playerSprite.setTextureRect(sf::IntRect(0,
 			2 * playerTextureOffset, playerTextureOffset, playerTextureOffset));
-	else if (moveX < 0) //Left
+	}
+	else if (moveX < 0) { //Left
 		playerSprite.setTextureRect(sf::IntRect(0,
 			1 * playerTextureOffset, playerTextureOffset, playerTextureOffset));
-	else if (moveY < 0) //Up
+	}
+	else if (moveY < 0) { //Up
 		playerSprite.setTextureRect(sf::IntRect(0,
 			0 * playerTextureOffset, playerTextureOffset, playerTextureOffset));
-	else if (moveY > 0) //Down
+	}
+	else if (moveY > 0) { //Down
 		playerSprite.setTextureRect(sf::IntRect(0,
 			3 * playerTextureOffset, playerTextureOffset, playerTextureOffset));
+	}
 
 	moveX = 0;
 	moveY = 0;
-}
+}*/
 
 #endif

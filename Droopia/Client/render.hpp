@@ -6,6 +6,6 @@
 
 void mainWindow();
 void LoadTextures();
-void MoveCharacter();
+void MoveCharacter(int direction, float speed); //void MoveCharacter();
 
 #endif

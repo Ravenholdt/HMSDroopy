@@ -168,6 +168,8 @@
     <ClCompile Include="Client\render.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Client\textures\enviroment.png" />
+    <Image Include="Client\textures\ground.png" />
     <Image Include="Client\textures\player.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

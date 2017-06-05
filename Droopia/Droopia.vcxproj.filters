@@ -43,5 +43,11 @@
     <Image Include="Client\textures\player.png">
       <Filter>Resource Files\Textures</Filter>
     </Image>
+    <Image Include="Client\textures\enviroment.png">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Client\textures\ground.png">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
   </ItemGroup>
 </Project>

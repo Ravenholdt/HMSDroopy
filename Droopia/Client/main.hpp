@@ -6,6 +6,6 @@
 
 #include "render.hpp"
 
-void keyboard();
+void MovementKeyboard();
 
 #endif
