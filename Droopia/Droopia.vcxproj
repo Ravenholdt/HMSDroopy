@@ -162,10 +162,12 @@
     <ClInclude Include="Client\main.hpp" />
     <ClInclude Include="Client\render.hpp" />
     <ClInclude Include="Client\sfml.hpp" />
+    <ClInclude Include="Client\textures.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client\main.cpp" />
     <ClCompile Include="Client\render.cpp" />
+    <ClCompile Include="Client\textures.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Client\textures\enviroment.png" />

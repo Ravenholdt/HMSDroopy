@@ -20,10 +20,15 @@ int main()
 float movspeed = 0.1f;
 
 void MovementKeyboard() {
-	float speed = 0.1f;
+	float speed;
 	while (true) {
-
+		speed = 0.1f;
 		Sleep(5);
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::LControl) ||
+			sf::Keyboard::isKeyPressed(sf::Keyboard::RControl)) {
+			speed = 0;
+		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
 

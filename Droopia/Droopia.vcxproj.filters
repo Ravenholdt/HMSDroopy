@@ -30,12 +30,18 @@
     <ClInclude Include="Client\sfml.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Client\textures.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client\render.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Client\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Client\textures.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

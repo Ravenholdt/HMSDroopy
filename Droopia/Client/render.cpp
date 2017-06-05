@@ -6,15 +6,8 @@
 
 #include "render.hpp"
 
+#include "textures.hpp"
 
-sf::Sprite playerSprite;
-sf::Texture playerTexture;
-
-sf::Sprite grassSprite;
-sf::Texture groundTexture;
-
-//sf::Sprite rockSprite;
-//sf::Texture groundTexture;
 
 int tileSize = 80;
 
@@ -44,23 +37,16 @@ void mainWindow() {
 			for (int cordY = 0; cordY < 11; cordY++) {
 				grassSprite.setPosition(cordX * 80 - 40, cordY * 80 - 40);
 				window.draw(grassSprite);
+				if (cordX == 3 && cordY == 5) {
+					rockSprite.setPosition(cordX * 80 - 40, cordY * 80 - 40);
+					window.draw(rockSprite);
+				}
 			}
 		}
 
 		window.draw(playerSprite);
 		window.display();
 	}
-}
-
-void LoadTextures() {
-	playerTexture.loadFromFile("Client/textures/player.png");
-	playerSprite.setTexture(playerTexture);
-	playerSprite.setTextureRect(sf::IntRect(0, 0, 128, 128));
-
-	groundTexture.loadFromFile("Client/textures/ground.png");
-	grassSprite.setTexture(groundTexture);
-
-	//enviromentTextrure
 }
 
 void MoveCharacter(int direction, float speed) {
@@ -80,15 +66,20 @@ void MoveCharacter(int direction, float speed) {
 	else if (direction == 3) { //Down
 		movement = sf::Vector2f(0, 1.f);
 	}
+	else {
+		movement = sf::Vector2f(0, 0);
+	}
 
 	movement *= speed;
 
 	playerSprite.setTextureRect(sf::IntRect(0,
 		direction * playerTextureOffset, playerTextureOffset, playerTextureOffset));
 
-	for (float i = 0; i < tileSize; i += speed) {
-		Sleep(1);
-		playerSprite.move(movement);
+	if (speed < 1) {
+		for (float i = 0; i < tileSize; i += speed) {
+			Sleep(1);
+			playerSprite.move(movement);
+		}
 	}
 }
 	
