@@ -169,6 +169,8 @@
     <ClInclude Include="textures.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="textures\BigRadar.png" />
+    <Image Include="textures\BigRadarCursor.png" />
     <Image Include="textures\enviroment.png" />
     <Image Include="textures\ground.png" />
     <Image Include="textures\HMSradar.png" />

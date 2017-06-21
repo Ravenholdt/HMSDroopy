@@ -15,7 +15,7 @@ float moveX, moveY;
 
 void mainWindow() {
 	LoadTextures();
-	sf::RenderWindow window(sf::VideoMode(1300, 900), "Droopia");
+	sf::RenderWindow window(sf::VideoMode(604, 604), "HMS Droopy");
 	window.setVerticalSyncEnabled(true);
 
 	while (window.isOpen())
@@ -31,6 +31,8 @@ void mainWindow() {
 
 
 		window.draw(spriteRadar);
+		spriteRadarCursor.rotate(1);
+		window.draw(spriteRadarCursor);
 		window.display();
 	}
 }

@@ -55,5 +55,11 @@
     <Image Include="textures\HMSradar.png">
       <Filter>Resource Files\Textures</Filter>
     </Image>
+    <Image Include="textures\BigRadarCursor.png">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="textures\BigRadar.png">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
   </ItemGroup>
 </Project>

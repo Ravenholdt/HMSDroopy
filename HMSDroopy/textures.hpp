@@ -15,6 +15,8 @@ extern sf::Texture enviromentTexture;
 extern sf::Sprite spriteRadar;
 extern sf::Texture textureRadar;
 
+extern sf::Sprite spriteRadarCursor;
+extern sf::Texture textureRadarCursor;
 
 void LoadTextures();
 

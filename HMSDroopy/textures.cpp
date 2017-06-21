@@ -12,6 +12,9 @@ sf::Texture enviromentTexture;
 sf::Sprite spriteRadar;
 sf::Texture textureRadar;
 
+sf::Sprite spriteRadarCursor;
+sf::Texture textureRadarCursor;
+
 void LoadTextures() {
 	playerTexture.loadFromFile("Client/textures/player.png");
 	playerSprite.setTexture(playerTexture);
@@ -23,6 +26,11 @@ void LoadTextures() {
 	enviromentTexture.loadFromFile("Client/textures/enviroment.png");
 	rockSprite.setTexture(enviromentTexture);
 
-	textureRadar.loadFromFile("textures/HMSradar.png");
+	textureRadar.loadFromFile("textures/BigRadar.png");
 	spriteRadar.setTexture(textureRadar);
+
+	textureRadarCursor.loadFromFile("textures/BigRadarCursor.png");
+	spriteRadarCursor.setTexture(textureRadarCursor);
+	spriteRadarCursor.setOrigin(302, 302);
+	spriteRadarCursor.setPosition(302, 302);
 }
