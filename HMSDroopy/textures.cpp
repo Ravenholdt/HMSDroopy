@@ -9,6 +9,9 @@ sf::Texture groundTexture;
 sf::Sprite rockSprite;
 sf::Texture enviromentTexture;
 
+sf::Sprite spriteRadar;
+sf::Texture textureRadar;
+
 void LoadTextures() {
 	playerTexture.loadFromFile("Client/textures/player.png");
 	playerSprite.setTexture(playerTexture);
@@ -19,4 +22,7 @@ void LoadTextures() {
 
 	enviromentTexture.loadFromFile("Client/textures/enviroment.png");
 	rockSprite.setTexture(enviromentTexture);
+
+	textureRadar.loadFromFile("textures/HMSradar.png");
+	spriteRadar.setTexture(textureRadar);
 }

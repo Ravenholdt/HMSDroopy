@@ -12,6 +12,9 @@ extern sf::Texture groundTexture;
 extern sf::Sprite rockSprite;
 extern sf::Texture enviromentTexture;
 
+extern sf::Sprite spriteRadar;
+extern sf::Texture textureRadar;
+
 
 void LoadTextures();
 
