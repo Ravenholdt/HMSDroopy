@@ -14,45 +14,42 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Resource Files\Textures">
-      <UniqueIdentifier>{495ff940-b28c-4edb-9289-920ddc45b51f}</UniqueIdentifier>
+      <UniqueIdentifier>{bb444c04-febd-41b7-80c6-02b25956a239}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Client\global.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Client\main.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Client\render.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Client\sfml.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Client\textures.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Client\render.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Client\main.cpp">
+    <ClCompile Include="render.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Client\textures.cpp">
+    <ClCompile Include="textures.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Client\textures\player.png">
+    <ClInclude Include="main.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="render.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sfml.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="textures.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="textures\enviroment.png">
       <Filter>Resource Files\Textures</Filter>
     </Image>
-    <Image Include="Client\textures\enviroment.png">
+    <Image Include="textures\ground.png">
       <Filter>Resource Files\Textures</Filter>
     </Image>
-    <Image Include="Client\textures\ground.png">
+    <Image Include="textures\player.png">
       <Filter>Resource Files\Textures</Filter>
     </Image>
   </ItemGroup>
